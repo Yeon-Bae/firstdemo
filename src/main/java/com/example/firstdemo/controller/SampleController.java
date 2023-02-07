@@ -24,7 +24,7 @@ public class SampleController {
 	}
 	
 	@GetMapping("/user/userid")
-	public String userId(@RequestParam("userid") String userid, Model model ) { 
+	public String userId(@RequestParam(value = "userid", required = false) String userid, Model model ) { 
 		
 		model.addAttribute("userid", userid);
 		model.addAttribute("username", "홍길동");
