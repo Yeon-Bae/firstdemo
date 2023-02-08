@@ -27,9 +27,9 @@ public class SampleController {
 	public String userId(@RequestParam(value = "userid", required = false) String userid, Model model ) { 
 		
 		/*
-		 * requred=true 옵션은 디폴트가 true이고, 써놓지 않으면 디폴트값으로 true가 적용. 
+		 * required=true 옵션은 디폴트가 true이고, 써놓지 않으면 디폴트값으로 true가 적용. 
 		 * 이 경우에는 반드시 userid 파라미터 값을 넣어서 HTTP 요청을 넣어야 한다. 안그러면 페이지 에러가 발생
-		 * http://localhost:8024/user/userid?userid=koreamonster
+		 * http://localhost:8024/user/userid?userid=KoreaMonster
 		 * 
 		 * 만약, false로 지정을 하면 파라미터 값을 넣지 않고 요청을 해도 페이지 에러가 발생하지 않는다. 
 		 * 
@@ -39,6 +39,41 @@ public class SampleController {
 		model.addAttribute("username", "홍길동");
 		
 		return "/user/userinfo";	// userinfo.html 
+	}
+	
+	@GetMapping("/user/userparams")
+	public String userParams( @RequestParam(value = "userid") String userid, 
+							  @RequestParam(value = "username") String username,
+							  Model model) {
+		/*
+		 * 
+		 * http://localhost8024/user/userparams?userid=KoreaMonster&username=김세빈
+		 */
+		
+		model.addAttribute("userid", userid); 
+		model.addAttribute("username", username);
+		
+		return "/user/userinfo";
+	}
+	
+	@GetMapping("/user/userparams2")
+	public String userParams( 
+			@RequestParam(value = "userid") String uid, 
+			@RequestParam(value = "username") String uname, 
+			@RequestParam(value = "useremail") String uemail, 
+			@RequestParam(value = "userhp", required=false) String uhp,
+			Model model ) {
+		
+		/*
+		 * http://localhost8024/user/userparams2?userid=KoreaMonster&username=김세빈&useremail=sebin@gmail.com&userhp=010-3977-0434
+		 */
+		
+		model.addAttribute("userid", uid);
+		model.addAttribute("username", uname);
+		model.addAttribute("useremail", uemail);
+		model.addAttribute("userhp", uhp);
+		
+		return "/user/userinfo";
 	}
 	
 
