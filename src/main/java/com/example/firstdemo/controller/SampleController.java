@@ -58,20 +58,20 @@ public class SampleController {
 	
 	@GetMapping("/user/userparams2")
 	public String userParams( 
-			@RequestParam(value = "userid") String uid, 
-			@RequestParam(value = "username") String uname, 
-			@RequestParam(value = "useremail") String uemail, 
-			@RequestParam(value = "userhp", required=false) String uhp,
+			@RequestParam(value = "userid") String userid, 
+			@RequestParam(value = "username") String username, 
+			@RequestParam(value = "useremail") String useremail, 
+			@RequestParam(value = "userhp", required=false) String userhp,
 			Model model ) {
 		
 		/*
 		 * http://localhost8024/user/userparams2?userid=KoreaMonster&username=김세빈&useremail=sebin@gmail.com&userhp=010-3977-0434
 		 */
 		
-		model.addAttribute("userid", uid);
-		model.addAttribute("username", uname);
-		model.addAttribute("useremail", uemail);
-		model.addAttribute("userhp", uhp);
+		model.addAttribute("userid", userid);
+		model.addAttribute("username", username);
+		model.addAttribute("useremail", useremail);
+		model.addAttribute("userhp", userhp);
 		
 		return "/user/userinfo";
 	}

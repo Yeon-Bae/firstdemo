@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://wwww.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Form Demo</title>
 </head>
 <body>
 
+	<h1>Post 방식으로 전달된 값 출력하기! </h1>
+	<h1 th:text="${membername}"></h1>
+	<h1 th:text="${memberid}"></h1>
+	<h1 th:text="${memberemail}"></h1>
+	<h1 th:text="${req}">req</h1>
+	
+	
 </body>
 </html>
