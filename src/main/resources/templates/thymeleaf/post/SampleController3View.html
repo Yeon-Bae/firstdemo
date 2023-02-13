@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View Page</title>
+</head>
+<body>
+
+	<h1 th:text="${heading}">스프링부트 객체 전달</h1>
+	<hr>
+	
+	<h1 th:text="${userDTO.userName}">유저네임</h1>
+	<h1 th:text="${userDTO.userId}">유저아이디</h1>
+	<h1 th:text="${userDTO.userPhone}">유저폰</h1>
+	
+	<hr>	
+
+	<h1 th:text="${userDTO.getUserName() }"></h1>
+	<h1 th:text="${userDTO.getUserId() }"></h1>
+	<h1 th:text="${userDTO.getUserPhone() }"></h1>
+
+</body>
+</html>
