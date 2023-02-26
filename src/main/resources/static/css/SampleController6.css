@@ -1,1 +1,24 @@
-@charset "UTF-8";
+table{
+    table-layout: fixed;
+
+    width: 100%;
+    border-collapse: collapse;
+    /*
+        설명 :
+        테이블의 테두리와 셀(td)의 테두리 사이의 간격을 어떻게 처리할지를 결정하는 옵션.
+        separate(기본)   : 사이 간격을 가짐.
+        collapse        : 사이 간격을 없앰. 겹치는 부분은 그냥 한줄로.
+        inherit         : 상속
+     */
+    border-spacing: 10px;
+    /*
+            설명 :
+            border-spacing 속성은 collapse일 때는 먹히지 않고, separate일 때 간격의 크기를 결정.
+     */
+
+
+}
+
+td, th {
+    border: 1px solid brown;
+}
