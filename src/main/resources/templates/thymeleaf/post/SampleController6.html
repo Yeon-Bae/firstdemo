@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>타임리프 반복 출력</title>
+</head>
+<body>
+
+	<h1>Thymeleaf Board Table</h1>
+	
+	<table>
+		<thead>
+			<tr>
+				<th>Number</th>
+				<th>Title</th>
+				<th>Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:object="${boardDTO}">
+				<td th:text="*{num}"></td>
+				<td th:text="*{btitle}"></td>
+				<td th:text="*{bname}"></td>
+			</tr>
+			<tr th:each="b : ${bList}" >
+				<td th:text="${b.num}"></td>
+				<td th:text="${b.btitle}"></td>
+				<td th:text="${b.bname}"></td>
+			</tr>
+	</tbody>
+	</table>
+
+</body>
+</html>
