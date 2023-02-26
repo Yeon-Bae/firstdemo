@@ -31,7 +31,9 @@ public class SampleController6 {
 		BoardDTO b3 = new BoardDTO(3, "다들 휴가는 갔다 오셨나요? ", "김유신");
 		BoardDTO b4 = new BoardDTO(4, "에어컨 없이는 하루도 못 살겠어요.", "을지문덕");
 		BoardDTO b5 = new BoardDTO(5, "오늘은 한글날이다.", "세종대왕");
-		
+		BoardDTO b6 = new BoardDTO(6, "동물원에 놀러가자...... ", "김재경");
+		BoardDTO b7 = new BoardDTO(7, "인천공항에 가고싶어요. ", "김연배");
+
 		List<BoardDTO> bList = new ArrayList<>();
 		
 		bList.add(b1);
@@ -39,6 +41,8 @@ public class SampleController6 {
 		bList.add(b3);
 		bList.add(b4);
 		bList.add(b5);
+		bList.add(b6);
+		bList.add(b7);
 		
 		
 		
